@@ -1,6 +1,6 @@
 # Why Not Chat Bot
 
-A modern, lightweight chat bot interface and Progressive Web App powered by Mistral AI and Mistral AI agents. Originally created to power [SimpyAI.com](https://simpyai.com), this project provides a flexible foundation for building custom chat experiences.
+A modern, lightweight chat bot interface powered by Mistral AI and Mistral AI agents. Originally created to power [SimpyAI.com](https://simpyai.com), this project provides a flexible foundation for building custom chat experiences.
 
 [![GitHub Repository](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?style=flat&logo=GitHub)](https://github.com/soniczonex/Why-Not-Chat-Bot)
 
@@ -11,7 +11,7 @@ A modern, lightweight chat bot interface and Progressive Web App powered by Mist
 - 📱 Mobile-first responsive design
 - ⚡ No framework dependencies
 - 🔒 Error-resilient configuration system
-- 🎨 Customizable UI and branding
+- 🎨 Dynamic branding via config
 - 📊 Debug mode for development
 
 ## Quick Start
@@ -24,7 +24,7 @@ cd Why-Not-Chat-Bot
 
 2. Configure your environment:
    - Update configuration values in `config.js`
-
+   - Ensure PHP is available for manifest generation
 
 ## Configuration
 
@@ -62,6 +62,19 @@ export const config = {
    - Customize welcome message
    - Modify any style variables in styles.css
 
+### Debug Mode
+
+To enable debug logging:
+1. Set `debug.enabled` to `true` in config.js
+2. Open browser's DevTools (F12)
+3. Go to Console tab
+4. Ensure "Verbose" or "Debug" level is enabled
+
+Debug mode logs:
+- API requests and responses
+- Configuration loading
+- Error states
+
 ### Project Structure
 
 ```
@@ -70,11 +83,14 @@ root/
 ├── styles.css             # Global styles
 ├── script.js             # Core application logic
 ├── config.js             # Configuration file
-├── site.webmanifest      # basic PWA configuration
+├── manifest.php          # Dynamic manifest generator
 ├── .htaccess             # Server configuration
-└── icons/                # Favicon and PWA icons
+└── icons/                # Favicon assets
 ```
 
+### Server Requirements
+
+- A web server with PHP support for manifest generation
 
 ## Error Handling
 
