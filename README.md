@@ -11,7 +11,6 @@ A modern, lightweight chat bot interface and Progressive Web App powered by Mist
 - 📱 Mobile-first responsive design
 - ⚡ No framework dependencies
 - 🔒 Error-resilient configuration system
-- 🌐 Progressive Web App (PWA) support
 - 🎨 Customizable UI and branding
 - 📊 Debug mode for development
 
@@ -71,7 +70,7 @@ root/
 ├── styles.css             # Global styles
 ├── script.js             # Core application logic
 ├── config.js             # Configuration file
-├── site.webmanifest      # PWA configuration
+├── site.webmanifest      # basic PWA configuration
 ├── .htaccess             # Server configuration
 └── icons/                # Favicon and PWA icons
 ```
