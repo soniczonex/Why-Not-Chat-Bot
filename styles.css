@@ -1,0 +1,205 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    padding: 10px; /* Add padding for better spacing on mobile */
+    -webkit-text-size-adjust: 100%; /* Prevent iOS zooming */
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 10px; /* Add padding for better spacing on mobile */
+}
+
+.chat-container {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 400px; /* Ensure max width for larger screens */
+    display: flex;
+    flex-direction: column;
+    height: 70vh; /* Set explicit height */
+}
+
+.chat-box {
+    height: calc(70vh - 60px); /* Account for input container */
+    padding: 10px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    flex: 1; /* Allow chat box to take available space */
+    min-height: unset; /* Remove min-height */
+}
+
+.user {
+    background-color: #e6f7ff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.ai {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.typing {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.dots {
+    animation: blink 1s steps(5, end) infinite;
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+.user {
+    background-color: #e6f7ff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.ai {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.input-container {
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px; /* Ensure max width for larger screens */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.input-container input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.input-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.input-container button:hover {
+    background-color: #0056b3;
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3em;
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: -20px; /* moves the logo up */
+    background: linear-gradient(45deg, #007bff, #6c757d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.welcome {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e6f7ff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.4em;
+    color: #007bff;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 600px) {
+    .logo {
+        display: none !important;
+        position: absolute;
+        z-index: -1;
+        height: 0;
+        margin: 0;
+        padding: 0;
+        opacity: 0;
+    }
+
+    .app-container {
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .chat-container {
+        height: 100vh;
+        height: -webkit-fill-available;
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: calc(env(safe-area-inset-bottom) + 60px);
+        margin: 0;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .chat-box {
+        flex-grow: 1;
+        height: auto;
+    }
+
+    .input-container {
+        position: fixed;
+        bottom: env(safe-area-inset-bottom);
+        left: 0;
+        right: 0;
+        background: white;
+    }
+}
